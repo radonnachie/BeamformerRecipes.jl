@@ -1,9 +1,9 @@
 using HDF5
 
 Base.Base.@kwdef mutable struct BeamInfo <: Info
-    ras::Vector{Float64} = Vector{Float64}(undef, 0)
-    decs::Vector{Float64} = Vector{Float64}(undef, 0)
-    src_names::Vector{String} = Vector{String}(undef, 0)
+    ras::AbstractVector{Float64} = Vector{Float64}(undef, 0)
+    decs::AbstractVector{Float64} = Vector{Float64}(undef, 0)
+    src_names::AbstractVector{String} = Vector{String}(undef, 0)
 end # mutable struct BeamInfo
 
 #=
