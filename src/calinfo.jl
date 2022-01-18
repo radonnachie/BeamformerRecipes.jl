@@ -1,6 +1,7 @@
 using HDF5
 
 Base.@kwdef mutable struct CalInfo <: Info
+    refant::Union{AbstractString,Nothing} = nothing
     cal_K::AbstractArray{Float32,2} = Array{Float32,2}(undef, 0, 0)
     cal_B::AbstractArray{ComplexF32,3} = Array{ComplexF32,3}(undef, 0, 0, 0)
     cal_G::AbstractArray{ComplexF32,2} = Array{ComplexF32,2}(undef, 0, 0)
