@@ -53,7 +53,7 @@ Name of HDF5 group that holds datasets for `typeof(info)` structs.
 """
 function groupname(info::Info)
     datasetpath = "$(lowercase(string(typeof(prop))))"
-    if datasetpath[1:18] == "beamformerrecipes."
+    if length(datasetpath) > 18 && datasetpath[1:18] == "beamformerrecipes."
         datasetpath = datasetpath[19:end]
     end
     datasetpath = "/$(datasetpath)"
