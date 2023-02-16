@@ -52,7 +52,7 @@ isstoreworthy(x::AbstractArray) = sizeof(x) > 0
 Name of HDF5 group that holds datasets for `typeof(info)` structs.
 """
 function groupname(info::Info)
-    datasetpath = "$(lowercase(string(typeof(prop))))"
+    datasetpath = "$(lowercase(string(typeof(info))))"
     if length(datasetpath) > 18 && datasetpath[1:18] == "beamformerrecipes."
         datasetpath = datasetpath[19:end]
     end
